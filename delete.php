@@ -5,6 +5,6 @@
         $sql = "DELETE from `student` where id=$id";
         $conn->query($sql);
     }
-    header('location:/crud_app/index.php');
+    header('location: ./index.php');
     exit;
 ?>

@@ -50,20 +50,22 @@
             die("invalid query!");
         }
         while($row=$result->fetch_assoc()){
-            echo "
+
+        ?>
+           
     <tr>
-      <th>$row[id]</th>
-      <td>$row[name]</td>
-      <td>$row[email]</td>
-      <td>$row[phone_no]</td>
-      <td>$row[join_date]</td>
+      <th><?php echo  $row['id'] ?></th>
+      <td><?php echo $row['name'] ?></td>
+      <td><?php echo $row['email'] ?></td>
+      <td><?php echo $row['phone_no'] ?></td>
+      <td><?php echo $row['join_date'] ?></td>
       <td>
-            <a class='btn btn-success' href='edit.php?id=$row[id]'>Edit</a>
-            <a class='btn btn-danger' href='delete.php?id=$row[id]'>Delete</a>
+            <a class='btn btn-success' href='edit.php?id=<?php echo $row["id"]?> '>Edit</a>
+            <a class='btn btn-danger' href='delete.php?id=<?php echo $row["id"]?>'>Delete</a>
       </td>
     </tr>
-    ";
-    }
+    
+       <?php  }
     ?>
   </tbody>
 </table>
